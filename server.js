@@ -1,11 +1,12 @@
 const express = require('express')
+
 const app = express()
 const cors = require('cors')
 app.use(cors({origin: 'http://localhost:5173',
 credentials:true}))
-const dotenv = require('dotenv')
+
 const bodyparser = require('body-parser')
-dotenv.config({path:'./config.env'})
+require('dotenv').config();
 const router = require('./routes/auth.js')
 const cookieParser = require('cookie-parser')
 require('./db/config.js')
